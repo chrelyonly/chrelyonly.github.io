@@ -55,7 +55,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2021-04-23 09:58:12'
+  postUpdate: '2021-06-02 17:26:16'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -260,7 +260,7 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
 
   newestCommentInit()
   document.addEventListener('pjax:complete', newestCommentInit)
-})</script><div class="aplayer no-destroy" data-id="1503100241" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="true" muted></div><div id="he-plugin-simple"></div><script type="text/javascript" src="/src/js/tianqijs.js"></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script src="https://pv.sohu.com/cityjson"></script><script src="/src/js/ip.js"></script><style type="text/css"> .ipcs { float:left; bottom: 0px; right:0px; left:0px; position:fixed; background-color: rgb(255, 255, 255) ;    font-size:  10px ; padding: 0px; text-align: center; z-index:999; margin: 0 auto; }</style><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/src/js/crash_cheat.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+})</script><link rel="stylesheet" href="https://butterfly.lete114.top/css/Lete.css"><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><div class="aplayer no-destroy" data-id="1503100241" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="true" muted></div><div id="he-plugin-simple"></div><script type="text/javascript" src="/src/js/tianqijs.js"></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script src="https://pv.sohu.com/cityjson"></script><script src="/src/js/ip.js"></script><style type="text/css"> .ipcs { float:left; width: 600px bottom: 0px; right:0px; left:0px; position:fixed; background-color: rgb(255, 255, 255) ;    font-size:  10px ; padding: 0px; text-align: center; z-index:999; margin: 0 auto; }</style><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/src/js/crash_cheat.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = true;
 POWERMODE.mobile = false;
 document.body.addEventListener('input', POWERMODE);
@@ -323,7 +323,8 @@ var pjax = new Pjax({
 document.addEventListener('pjax:complete', function () {
   window.refreshFn()
 
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
+  //- document.querySelectorAll('script[data-pjax]').forEach(item => {
+  document.querySelectorAll('script[data-pjax], .pjax-reload script').forEach(item => {
     const newScript = document.createElement('script')
     const content = item.text || item.textContent || item.innerHTML || ""
     Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
