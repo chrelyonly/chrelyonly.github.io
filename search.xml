@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>新博客预定中</title>
+      <link href="/2022/04/15/8/"/>
+      <url>/2022/04/15/8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="本文章记录-复刻一个-hexo-butterfly-版博客"><a href="#本文章记录-复刻一个-hexo-butterfly-版博客" class="headerlink" title="本文章记录 复刻一个 hexo + butterfly 版博客"></a>本文章记录 复刻一个 hexo + butterfly 版博客</h2><h2 id="两个版本-微服务-和boot版"><a href="#两个版本-微服务-和boot版" class="headerlink" title="两个版本(微服务,和boot版)"></a>两个版本(微服务,和boot版)</h2><p>1.微服务(即评论系统独立和一些功能独立)<br>2.boot版(即功能为一体)</p><h2 id="将会有h5端-app端-各类小程序端"><a href="#将会有h5端-app端-各类小程序端" class="headerlink" title="将会有h5端,app端,各类小程序端.."></a>将会有h5端,app端,各类小程序端..</h2><h3 id="使用环境-框架-技术"><a href="#使用环境-框架-技术" class="headerlink" title="使用环境,框架,技术"></a>使用环境,框架,技术</h3><p>1.springboot快速开发框架(jeecgboot全后端+vue2+vue3) 用于管理端<br>2.使用vue3编写的博客 (butterfly主题版)</p><h3 id="预计2个月出效果"><a href="#预计2个月出效果" class="headerlink" title="预计2个月出效果"></a>预计2个月出效果</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> DIV </category>
+          
+          <category> java </category>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo,自定义修改,魔改 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>avue食用技巧</title>
+      <link href="/2022/03/25/5/"/>
+      <url>/2022/03/25/5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="最近开发中遇到了avue前端框架"><a href="#最近开发中遇到了avue前端框架" class="headerlink" title="最近开发中遇到了avue前端框架"></a>最近开发中遇到了<a href="https://avuejs.com/">avue</a>前端框架</h2><p>发现与我们平常的vue写法大有不同,封装过多的函数用法,前所未有的格式,一系列的食用技巧.</p><h3 id="子表单-单列多数据-食用"><a href="#子表单-单列多数据-食用" class="headerlink" title="子表单(单列多数据)食用"></a>子表单(单列多数据)食用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  label: &#x27;子表单&#x27;,</span><br><span class="line">  prop: &#x27;dynamic&#x27;,</span><br><span class="line">  type: &#x27;dynamic&#x27;,</span><br><span class="line">  span: 24,</span><br><span class="line">  children: &#123;</span><br><span class="line">    align: &#x27;center&#x27;,</span><br><span class="line">    headerAlign: &#x27;center&#x27;,</span><br><span class="line">    rowAdd: (done) =&gt; &#123;</span><br><span class="line">      this.$message.success(&#x27;新增回调&#x27;);</span><br><span class="line">      done(&#123;</span><br><span class="line">        input: &#x27;默认值&#x27;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    rowDel: (row, done) =&gt; &#123;</span><br><span class="line">      this.$message.success(&#x27;删除回调&#x27; + JSON.stringify(row));</span><br><span class="line">      done();</span><br><span class="line">    &#125;,</span><br><span class="line">    column: [&#123;</span><br><span class="line">      // width: 800,</span><br><span class="line">      span: 24,</span><br><span class="line">      label: &#x27;题目选项&#x27;,</span><br><span class="line">      prop: &quot;input&quot;,</span><br><span class="line">      // formslot: true,</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><h3 id="动态列"><a href="#动态列" class="headerlink" title="动态列"></a>动态列</h3><p>可以通过给 列的List添加其他需要的字段<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203252005096.png"></p><h3 id="调用内部的增删改查方法"><a href="#调用内部的增删改查方法" class="headerlink" title="调用内部的增删改查方法"></a>调用内部的增删改查方法</h3><p>添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$refs.crud.rowAdd()</span><br></pre></td></tr></table></figure><p>删除</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$refs.crud.rowDel(row,index)</span><br></pre></td></tr></table></figure><h3 id="自定义rule表达"><a href="#自定义rule表达" class="headerlink" title="自定义rule表达"></a>自定义rule表达</h3><p>定义一个方法 定义表达式验证<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203291550239.png"><br>在方法里判断<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203291551554.png"></p><h3 id="去掉标题-冒号"><a href="#去掉标题-冒号" class="headerlink" title="去掉标题 冒号"></a>去掉标题 冒号</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202204040901535.png"></p><h3 id="使用elmeent确认框-需注意-then方法是同级的-可能会出现先清除了数据才调用-then的方法"><a href="#使用elmeent确认框-需注意-then方法是同级的-可能会出现先清除了数据才调用-then的方法" class="headerlink" title="使用elmeent确认框 需注意 .then方法是同级的,可能会出现先清除了数据才调用.then的方法"></a>使用elmeent确认框 需注意 .then方法是同级的,可能会出现先清除了数据才调用.then的方法</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202204062018036.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+          <category> Axios </category>
+          
+          <category> springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> Axios </tag>
+            
+            <tag> springboot </tag>
+            
+            <tag> avue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mybatis_plus的QueryWrapper高级用法</title>
+      <link href="/2022/03/24/10/"/>
+      <url>/2022/03/24/10/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一些好用的工具-和-方法-技巧"><a href="#一些好用的工具-和-方法-技巧" class="headerlink" title="一些好用的工具 和 方法,技巧"></a>一些好用的工具 和 方法,技巧</h2><h3 id="先看图片"><a href="#先看图片" class="headerlink" title="先看图片"></a>先看图片</h3><p>先写好多表查询的sql 条件直接${qw.customsqlsegment}接口传入qw即可动态多表查询<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203251957291.png"><br>正常使用 QueryWrapper拼接sql,拼接sql时注意重命名的表名<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203251954451.png"></p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203251956048.png"></p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202203251957473.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mybatis_plus </tag>
+            
+            <tag> QueryWrapper高级用法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>valine评论修改方案</title>
+      <link href="/2022/02/20/7/"/>
+      <url>/2022/02/20/7/</url>
+      
+        <content type="html"><![CDATA[<p>本文章记录valine评论,自定义修改的方法</p><h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h2 id="修改-valine-js-如果没有就保存一份到本地然后修改"><a href="#修改-valine-js-如果没有就保存一份到本地然后修改" class="headerlink" title="修改 valine.js,如果没有就保存一份到本地然后修改"></a>修改 valine.js,如果没有就保存一份到本地然后修改</h2><p>引入本地valine<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201440167.png"></p><h2 id="valine修改添加-小标签-仅valine-js-1-4-16版本"><a href="#valine修改添加-小标签-仅valine-js-1-4-16版本" class="headerlink" title="valine修改添加 小标签(仅valine.js 1.4.16版本)"></a>valine修改添加 小标签(仅valine.js 1.4.16版本)</h2><h3 id="开启昵称输入qq自动识别"><a href="#开启昵称输入qq自动识别" class="headerlink" title="开启昵称输入qq自动识别"></a>开启昵称输入qq自动识别</h3><h3 id="由于新版主题为很多功能进行了-无用参数剔除-可以去看主题4-0版本的更新介绍"><a href="#由于新版主题为很多功能进行了-无用参数剔除-可以去看主题4-0版本的更新介绍" class="headerlink" title="由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍"></a>由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍</h3><h3 id="修改valine-pug文件"><a href="#修改valine-pug文件" class="headerlink" title="修改valine.pug文件"></a>修改valine.pug文件</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201431105.png"><br>新增 (enableQQ: #{theme.valine.enableQQ},) 为qq头像识别</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">masterS: &#x27;#&#123;theme.valine.masterS&#125;&#x27;,</span><br><span class="line">friendS: &#x27;#&#123;theme.valine.friendS&#125;&#x27;,</span><br><span class="line">enableQQ: #&#123;theme.valine.enableQQ&#125;,</span><br></pre></td></tr></table></figure><p>修改主题配置文件<br>同样新增</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enableQQ: true</span><br><span class="line">masterS: </span><br><span class="line">friendS: </span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201433575.png"></p><h4 id="修改valine-js"><a href="#修改valine-js" class="headerlink" title="修改valine.js"></a>修改valine.js</h4><p>搜索</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pageSize:10,recordIP:!0</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201443429.png"><br>添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterS:&quot;&quot;,</span><br><span class="line">friendS:[],</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201444988.png"></p><p>搜索,如果用其他方法能定位到也可以</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;var o=(0,S.default)(&#x27;&lt;div class=&quot;vcard&quot; id=&quot;&#x27;+t.id+&#x27;&quot;&gt;&lt;/div&gt;&#x27;),i=t.get(&quot;ua&quot;),a=&quot;&quot;;i&amp;&amp;!/ja/.test(e.cfg.lang)&amp;&amp;(i=S.default.detect(i),a=i.os?&#x27;&lt;span class=&quot;vsys&quot;&gt;&#x27;</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201451971.png"><br>修改为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">let temptel;</span><br><span class="line">let friendS = e.cfg.friendS</span><br><span class="line">let masterS = e.cfg.masterS</span><br><span class="line">friendS = friendS.split(&quot;,&quot;)</span><br><span class="line">if(t.get(&quot;mail&quot;) == masterS)&#123;</span><br><span class="line">temptel = &quot;&lt;span class=&#x27;vsys masters&#x27; id=&#x27;masters&#x27;&gt;是我呀❤(●&#x27;◡&#x27;●)&quot;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">for (let indexS = 0; indexS &lt; friendS.length; indexS++) &#123;</span><br><span class="line">if(t.get(&quot;mail&quot;) == friendS[indexS])&#123;</span><br><span class="line">temptel = &quot;&lt;span class=&#x27;vsys friends&#x27; id=&#x27;friends&#x27;&gt;朋友们忄&quot;</span><br><span class="line">break</span><br><span class="line">&#125;else&#123;</span><br><span class="line">temptel = &quot;&lt;span class=&#x27;vsys stranger&#x27; id=&#x27;stranger&#x27;&gt;陌生人QAQ&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">var o=(0,S.default)(&#x27;&lt;div class=&quot;vcard&quot; id=&quot;&#x27;+t.id+&#x27;&quot;&gt;&lt;/div&gt;&#x27;),i=t.get(&quot;ua&quot;),a=&quot;&quot;;i&amp;&amp;!/ja/.test(e.cfg.lang)&amp;&amp;(i=S.default.detect(i),a=i.os?</span><br><span class="line">temptel</span><br><span class="line">+</span><br><span class="line">&#x27;&lt;/span&gt;&lt;span class=&quot;vsys&quot;&gt;&#x27;</span><br></pre></td></tr></table></figure><p>需添加自定义css达到颜色区分</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* 修改valine评论标签颜色 */</span><br><span class="line">/* 主人 */</span><br><span class="line">#masters&#123;</span><br><span class="line">  background-color: #ffa51e;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">/* 朋友 */</span><br><span class="line">#friends&#123;</span><br><span class="line">  background-color: #65C6FF;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">/* 陌生人 */</span><br><span class="line">#stranger&#123;</span><br><span class="line">  background-color: #bebab3;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后保存即可</p><h2 id="新增qq提醒功能-目前qqserver酱被tx制裁-可能没用"><a href="#新增qq提醒功能-目前qqserver酱被tx制裁-可能没用" class="headerlink" title="新增qq提醒功能(目前qqserver酱被tx制裁,可能没用)"></a>新增qq提醒功能(目前qqserver酱被tx制裁,可能没用)</h2><h3 id="qq提醒"><a href="#qq提醒" class="headerlink" title="qq提醒"></a>qq提醒</h3><p>本期来给valine对接qq,微信提醒,在线修改</p><h4 id="回到之前搭建valine-admin评论管理"><a href="#回到之前搭建valine-admin评论管理" class="headerlink" title="回到之前搭建valine-admin评论管理"></a>回到之前搭建valine-admin评论管理</h4><h4 id="首先-fork-一下你所部署的仓库"><a href="#首先-fork-一下你所部署的仓库" class="headerlink" title="首先 fork 一下你所部署的仓库"></a>首先 fork 一下你所部署的仓库</h4><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141238837.png"></p><h4 id="在这里看"><a href="#在这里看" class="headerlink" title="在这里看"></a>在这里看</h4><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141238618.png"></p><h4 id="之后你就会在自己的github上找到所对应的仓库"><a href="#之后你就会在自己的github上找到所对应的仓库" class="headerlink" title="之后你就会在自己的github上找到所对应的仓库"></a>之后你就会在自己的github上找到所对应的仓库</h4><p>然后把 leancloud 的仓库地址换成自己的</p><h4 id="再打开这个文件编辑-添加-axios请求工具"><a href="#再打开这个文件编辑-添加-axios请求工具" class="headerlink" title="再打开这个文件编辑, 添加 axios请求工具"></a>再打开这个文件编辑, 添加 axios请求工具</h4><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141239087.png"> </p><h4 id="在-if-error-后加上"><a href="#在-if-error-后加上" class="headerlink" title="在 if(error){} 后加上"></a>在 if(error){} 后加上</h4><p> <img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141253461.png"></p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> console.log(&#x27;准备提醒&#x27;)</span><br><span class="line">try&#123;</span><br><span class="line">  if (process.env.QMSG_KEY != null) &#123;</span><br><span class="line">              console.log(&#x27;开始QQ提醒&#x27;)</span><br><span class="line">              axios(&#123;</span><br><span class="line">                  method: &#x27;post&#x27;,</span><br><span class="line">                  url: `https://qmsg.zendee.cn/send/$&#123;process.env.QMSG_KEY&#125;`,</span><br><span class="line">                  data: &#x27;msg=&#x27;+ &#x27;博客有新消息啦!          ❤&#x27; + NICK + &#x27;❤偷偷评论了你,快去看看吧&#x27;,</span><br><span class="line">                  headers: &#123;</span><br><span class="line">                      &#x27;Content-type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              .then(function (response) &#123;</span><br><span class="line">                  if (response.status === 200 &amp;&amp; response.data.errmsg === &#x27;success&#x27;) &#123;</span><br><span class="line">                      console.log(&#x27;已QQ提醒站长&#x27;)</span><br><span class="line">                  &#125; else &#123;</span><br><span class="line">                      console.warn(&#x27;qq提醒失败:&#x27;, response.data)</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              .catch(function (error) &#123;</span><br><span class="line">                  console.error(&#x27;提醒失败:&#x27;, error.message)</span><br><span class="line">               &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">&#125;catch(e)&#123;</span><br><span class="line">  console.log(e)</span><br><span class="line">  //TODO handle the exception</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p> <img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141254788.png"></p><h4 id="然后保存-提交更改"><a href="#然后保存-提交更改" class="headerlink" title="然后保存 提交更改"></a>然后保存 提交更改</h4><h4 id="之后在"><a href="#之后在" class="headerlink" title="之后在"></a>之后在</h4><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141257036.png"><br>新增一个 QMSG_KEY 变量  值为 你的 密钥</p><h4 id="获取qq通知密钥"><a href="#获取qq通知密钥" class="headerlink" title="获取qq通知密钥"></a>获取qq通知密钥</h4><h4 id="注册一个账号-通过后台就可以获取到所对应的密钥"><a href="#注册一个账号-通过后台就可以获取到所对应的密钥" class="headerlink" title="注册一个账号  通过后台就可以获取到所对应的密钥"></a>注册一个账号  通过后台就可以获取到所对应的密钥</h4><p><a href="https://qmsg.zendee.cn/">https://qmsg.zendee.cn/</a><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141258361.png"></p><h5 id="最后在部署一下"><a href="#最后在部署一下" class="headerlink" title="最后在部署一下"></a>最后在部署一下</h5><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141300796.png"></p><p>你也可以直接使用我的github仓库</p><h2 id="修改qq信息获取接口"><a href="#修改qq信息获取接口" class="headerlink" title="修改qq信息获取接口"></a>修改qq信息获取接口</h2><h3 id="butterfly主题4-0以上-即valine-js-1-4-16"><a href="#butterfly主题4-0以上-即valine-js-1-4-16" class="headerlink" title="(butterfly主题4.0以上,即valine.js 1.4.16)"></a>(butterfly主题4.0以上,即valine.js 1.4.16)</h3><p>仿照旧文档搜索</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url:&quot;//valine.api.ioliu.cn/getqqinfo&quot;,method:&quot;POST&quot;,body:&#123;qq:e&#125;&#125;).then(function(e)&#123;e.json().then(function(e)&#123;</span><br></pre></td></tr></table></figure><p>替换为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">url:&quot;https://api.usuuu.com/qq/&quot;+e,method:&quot;GET&quot;,body:&#123;qq:e&#125;&#125;).then(function(e)&#123;</span><br><span class="line">console.log(&quot;QQ信息获取中...&quot;,e)</span><br><span class="line">e.json().then(function(e)&#123;</span><br><span class="line">var inqqfo;</span><br><span class="line">(e.errmsg,console.log(&quot;获取失败:&quot;+e)) || (inqqfo = &#123;&quot;pic&quot;: e.data.avatar,&quot;nick&quot;: e.data.name,&quot;qq&quot;: e.data.qq&#125;,</span><br><span class="line">console.log(&quot;QQ信息获取OK&quot;),</span><br><span class="line">console.log(e,inqqfo));</span><br><span class="line">e=inqqfo;</span><br></pre></td></tr></table></figure><p>即可</p><h3 id="butterfly主题4-0以下-即valine-js-1-4-4"><a href="#butterfly主题4-0以下-即valine-js-1-4-4" class="headerlink" title="(butterfly主题4.0以下,即valine.js 1.4.4)"></a>(butterfly主题4.0以下,即valine.js 1.4.4)</h3><p>先看原来的 </p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142148.png"></p><p>发现只有 qq邮箱头像获取了<br>看看请求头连接</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142318.png"></p><p>请求连接  post请求 <a href="https://valine.api.ioliu.cn/getqqinfo">https://valine.api.ioliu.cn/getqqinfo</a> 参数是  qq&#x3D;QQ号&amp;t&#x3D;时间   时间是他自己会加</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142421.png"></p><p>再看他的响应 发现我们的  nick 昵称为空了  看一下头像地址pic</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142538.png"><br>发现头像是对的</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142713.png"></p><p>估计是官方的接口出了点问题,无法显示 qq 昵称<br>打开官方js看一下 通过 butterflt主题下的,valine.js 复制到浏览器打开</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802143027.png"></p><p>看不懂直接搜索 刚才的请求地址 valine.api.ioliu.cn&#x2F;getqqinfo  找到了<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802143109.png"></p><p>将这个js全部复制下来 新建个txt文件放到里面   随便给个名字   myvaline.js   不要忘记把后缀改成.js 然后放到 网站根目录下source下,新建个文件夹放着:例如   我放到  source&#x2F;src&#x2F;js&#x2F;下    </p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802144250.png"></p><p>将它换成新的qq信息接口就可以了,新的接口要注意他的返回参数是否与官方的一致,不一致的话自己顶一个变量接受一下<br>打开我们复制下来的js更换里面的代码<br>这里给出简单的更换方法:<br>ctrl+f找到  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>:<span class="string">&quot;POST&quot;</span>,url:<span class="string">&quot;//valine.api.ioliu.cn/getqqinfo&quot;</span>,data:&#123;qq:e&#125;,success:<span class="keyword">function</span>(e)&#123;</span><br></pre></td></tr></table></figure><p>全部替换为</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>:<span class="string">&quot;GET&quot;</span>,url:<span class="string">&quot;//api.usuuu.com/qq/&quot;</span>+e,data:&#123;&#125;,success:<span class="keyword">function</span>(e)&#123;var inqqfo = &#123;<span class="string">&quot;pic&quot;</span>: e.data.avatar,<span class="string">&quot;nick&quot;</span>: e.data.name,<span class="string">&quot;qq&quot;</span>: e.data.qq&#125;;console.log(<span class="string">&quot;QQ信息获取......&quot;</span>,e,inqqfo);e=inqqfo;</span><br></pre></td></tr></table></figure><p>最后不要忘记了更换主题配置文件里的js引入哦~  路径就是source下的文件夹到文件</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802144537.png"></p><p>然后重新 hexo clean g s  评论系统输入qq号就可以看到qq信昵称了,<br>这里放上我修改好的js 直接更换引入连接就可以了.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valine: https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/myvaline_beta1.0.js</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题 </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>更新说明</title>
+      <link href="/2022/02/04/2/"/>
+      <url>/2022/02/04/2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="即将实现的功能"><a href="#即将实现的功能" class="headerlink" title="即将实现的功能"></a>即将实现的功能</h2><h3 id="目前是单侧边栏-将会修改为双侧边栏-即左右都展示侧边栏-目前右边侧边栏展示有点多"><a href="#目前是单侧边栏-将会修改为双侧边栏-即左右都展示侧边栏-目前右边侧边栏展示有点多" class="headerlink" title="目前是单侧边栏,将会修改为双侧边栏,即左右都展示侧边栏 (目前右边侧边栏展示有点多)"></a>目前是单侧边栏,将会修改为双侧边栏,即左右都展示侧边栏 (目前右边侧边栏展示有点多)</h3><h3 id="用springboot复刻-一些api接口-灵感来自-悠悠吧"><a href="#用springboot复刻-一些api接口-灵感来自-悠悠吧" class="headerlink" title="用springboot复刻  一些api接口  (灵感来自 悠悠吧)"></a>用springboot复刻  一些api接口  (灵感来自 悠悠吧)</h3><h3 id="即将用java-mysql-vue复刻hexo-bf实现前后端分离管理系统-页面模块估计一样"><a href="#即将用java-mysql-vue复刻hexo-bf实现前后端分离管理系统-页面模块估计一样" class="headerlink" title="即将用java mysql vue复刻hexo+bf实现前后端分离管理系统(页面模块估计一样)"></a>即将用java mysql vue复刻hexo+bf实现前后端分离管理系统(页面模块估计一样)</h3><h2 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h2><h3 id="jsd图片可能加载失败-导致hexo识别为404图片"><a href="#jsd图片可能加载失败-导致hexo识别为404图片" class="headerlink" title="jsd图片可能加载失败,导致hexo识别为404图片"></a>jsd图片可能加载失败,导致hexo识别为404图片</h3><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>2022年5月27日11:01:18<br> 1.重新部署了 hexo + butterfly博客<br> 2.升级hexo到6.2.0 升级butterfly到4.2.2<br> 3.开启pajx<br> 4.不再提供音乐播放器功能<br> 5.新博客前夕<br>2022年5月24日17:41:08<br> 1.优化一些问题<br> 2.开启左下角看板娘<br>2022年5月19日08:29:34<br> 1.暂时自代理处理了 blogapi.chrelyonly.cn  jsd加速的问题<br>2022年5月9日18:06:47<br> 1.舍去了 glpu工具(不好用)<br> 2.更新至主题新版本4.2.0<br> 3.优化一些页面展示<br>2022年3月25日20:38:27<br> 1.再次使用了glup自动化构建工具用来压缩代码<br> 2.以后将会活跃起来,争取多发文章多学习!<br>2022年3月9日09:01:50<br> 1.处理,友情链接,头像异常,感谢<a href="www.odirect.cn">小破团</a>,指出问题!  链接 avatar写成 avata<br>2022年2月26日22:52:56<br> 1.优化顶部标题栏布局排版<br>2022年2月20日13:29:52<br> 1.处理了无法选中的问题<br> 2.调整了动画展示速度<br> 3.valine自定义的qqapi接口(已通过向官方说明解决,已正常获取qq信息),感谢<a href="https://www.usuuu.com/">悠悠吧</a>提供的接口<br> 4.新增置顶功能<br> 5.删除一些废话文章<br>2022年2月17日08:57:53<br> 1.优化了一些页面细节<br>2022年2月15日08:58:55<br> 1.发现自定义修改的valine获取QQ信息接口ssl证书过期可能无法获取到QQ信息!<br> 2.首次进入弹窗暂时不展示!<br>2022年2月14日14:34:45<br> 1.部分页面因为jquery而造成无法选中()<br>2022年2月11日09:48:14<br> 1.评论邮件通知只会在9:00–22:00进行通知<br>2022年2月5日10:50:37<br> 1.添加了搜索功能<br> 2.优化一些配置<br> 3.添加了字数统计<br> 4.添加了网页访问统计<br> 5.完善了 首次进入的 弹窗<br>2022年2月4日17:55:39<br> 1.新增了一个首页展示<a href="https://home.chrelyonly.cn/">点我查看</a><br> 2.取消了部分自定义样式<br> 3.取消了样式动画重复播放的问题(感谢群友!)<br> 4.美化了几个div元素<br> 5.添加了一个首次进入时的弹窗(灵感来自<a href="https://home.chrelyonly.cn/">火喵</a> !)<br>2022年1月28日20:32:03<br> 1.优化一些细节(文字和动画重复播放的问题)<br>2022年1月25日16:07:05<br> 1.优化页面部分细节<br> 2.新增几个美化的插件<br>   (1.)雪花特效<br>   (2.)页面加载特效<br> 3.新增鼠标指针美化(只有部分样式,有缺陷)<br>2022年1月15日14:45:40<br> 1.更新butterfly主题到4.0.0版本<br> 2.更新后发现配置得到 精简(评论配置变少,valine获取qq头像配置失效)(已通过修改valine.pug文件修改回来)<br> 3.已添加valine评论的 小标签<br>2022年1月2日15:22:57<br> 1.优化侧边栏最新评论展示样式(如果没有头像则随机一个)<br>2021年12月30日14:27:12<br> 1.网站已强制https访问<br> 2.valine获取QQ信息已解决<br> 3.已取消复制会携带版权的信息<br>2021年12月28日16:41:08<br> 1.发现修改过后的 valine 手机端 无法获取qq信息 (可能我手机的原因,已暂时替换回官方valine)<br>2021年12月6日09:37:43<br> 1.pjax暂时没有想到解决办法,先不处理<br> 2.优化部分页面,抛出部分参数单独为一个config配置文件<br>2021年11月27日15:23:53<br> 1.主题已关闭pjax(简单解决js不加载问题)<br> 2.侧边栏添加 valine 最新3条评论<br> 3.侧边栏添加 记录访客 信息<br> 4.已关闭音乐播放器默认播放<br>2021年11月26日17:18:42<br>外置一些自定义参数,详细请看 &#x2F;src&#x2F;js&#x2F;config.js<br>2021年11月26日13:36:16<br>侧边栏自定义获取(不依赖主题自带的)<br>2021年11月25日18:01:36<br>初步解决 pjax不加载cssjs的问题(未实现!!!!)<br>2021年11月25日17:51:02<br>修改网站不是同pjax<br>2021年11月23日11:22:06<br>修改最新valine接口(qq信息获取,并支持qq提醒)<br>2021年11月17日16:50:43<br>修改部分主题配置(网站标题….)<br>2021年11月14日12:04:19<br>同步主题版本为最新,修改valine qq接口<br>2021年8月17日17:11:57<br>修改图片的cdn不在需要代理才可看图片~<br>2021年8月12日16:19:38<br>好好学习,努力改BUG~(●’◡’●)<br>新增部署服务器vercel<br>2021年8月11日16:06:05<br>新增多个随机图片api<br>2021年8月10日11:18:55<br>新增文章改封面img为随机图片测试<br>2021年8月9日16:33:16<br>新增看板娘左下角<br>修改部分效果展示css<br>新增waline评论系统(说说页面)<br>2021年8月3日17:33:23<br>更新valine评论仓库valine-admin版本为当前最新<br>目前仅仅只会qq邮箱发送提醒,不再适配微信qq消息提醒<br>2021年8月2日14:16:12<br>修改了valine.js中获取qq信息的方法<br>2021年8月2日14:16:49  以当前最新的  hexo butterly版本 搭建<br>重新更新了node.js   hexo    butterfly 版本  重新部署了博客<br>删除了底部访问者ip记录,删除了侧边栏多种问题,修改网站背景,感谢小康大佬,评论系统依旧使用valine与github<br>2021&#x2F;4&#x2F;20<br>更新了主题版本为最新,重新部署了博客<br>出现的BUG(valine评论系统昵称无法获取,左上角天气预报BUG)<br>2020&#x2F;8&#x2F;31<br>修改关于页面为 留言板<br>2020&#x2F;8&#x2F;29<br>修改aplayer播放器按list顺序播放<br>2020&#x2F;8&#x2F;27<br>已知影响速度因素有 busuanzi……毕竟外国的服务器<br>2020&#x2F;8&#x2F;25<br>升级了hexo 版本5.1.1. 目前hexo 版本5.1.1，butterfly3.0，<br>2020&#x2F;8&#x2F;13<br>接下来将会介绍hexo博客的超详细搭建教程<br>2020&#x2F;8&#x2F;10<br>使用了一个动态说说插件发表心情Artitalk.js，优化页面加载速度，优化各种BUG QAQ,略微调整了一些布局，使用pajx来优化加载速度，增加了coding部署方式<br>2020&#x2F;8&#x2F;8<br>继续使用懒人大佬的valine.js ,完善了PWA  ，优化页面切换效果，左下角音乐播放器，正下方音乐歌词，<br>2020&#x2F;8&#x2F;7<br>更新了  hexo框架5.0.0，升级了主题3.0最新版，去除多余的插件，主题内置了 aplay插件，配置左下角音乐播放器，取消了第三方的双评论系统而是用官方双评论系统，<br>2020&#x2F;7&#x2F;25<br>解决http协议不安全<br>2020&#x2F;7&#x2F;23<br>重新部署了博客系统，更新到最新版本的主题butterfly3.0测试版, 删除友情链接多字，优化加载速度，添加了 读书 电影 标签的图标. 代码压缩现在暂未实现(更换主题config配置 太难了QAQ இ௰இ)<br>2020-7-21<br>又一次继续维护我的博客！  ，修复 友情链接多字  ，更新了 主题大版本3.0，使用了 Gulp 压缩代码 html&#x2F;css&#x2F;js ,使用gulp-htmlclean和gulp-htmlmin来压缩HTML，使用gulp-clean-css来压缩CSS，使用压缩JS  gulp-uglify + terser ，使用gulp-imagemin来压缩图片，微略配置了PWA渐进式应用（1）。<br>2020-5-11<br>完善valine提醒细节，<br>2020-5-6<br>解决评论系统并行，<a href="https://push.zhanzhang.baidu.com/push.js%E9%9C%80%E8%A6%81%E9%83%A8%E7%BD%B2%E5%9F%9F%E5%90%8D%E6%89%8D%E8%83%BD%E6%8E%A8%E9%80%81%EF%BC%8Cgithub%E6%8A%A5%E9%94%99Error">https://push.zhanzhang.baidu.com/push.js需要部署域名才能推送，github报错Error</a>: Network Error原因国内防火墙阻止<br>2020-5-4<br>使用了双评论系统左上点切换，<br>2020-5-3<br>添加PWA渐进式应用，更新主题版本为最新2.5，添加过场动画，推送网站到百度搜索引擎,DevTools failed to parse SourceMap F12黄色警告 已解决（typed.js文件警告COOKis），valine会显示IP黄色警告（记录用户IP时）<br>2020-4-17<br>升级了valine评论插件，新增IP访客记录，IP记录在网页底部，使用busuanzi插件谷歌浏览器会提示未设置cook（busuanzi.com），ip查询也是一样(sohu.com),修改了部分鼠标样式，细节下背景图片大小<br>2020-4-9<br>修改主页背景图<br>2020-4-8<br>修改文章图标<br>2020-4-1-16:20<br>修复F12各种未知bug<br>2020-3-30-16:20<br>添加了图库，但是图库路径没有创建报错，解决网页各种报错，添加美化特效，大致效果，背景效果，动态彩带，鼠标点击爱心，文章字数统计，网页标题欺骗，评论QQ邮箱自动获取qq头像，<br>2020-3-29-19:20<br>完善hexo主题文字细节描述，订阅RSS源设置为网站首页，开启fontawesome_v5版本，开启LIVE2d看板娘，文章底部打赏图片路径修改<br>2020-3-28-19:20<br>更换了评论系统，修改时间为2020年，优化加载速度，支持邮件提醒，评论可以随意填（现在必填昵称邮箱），填了邮箱，有回复有发邮件提醒你！</p><h3 id="搁置"><a href="#搁置" class="headerlink" title="搁置"></a>搁置</h3><p>字体文件报错暂时没有找到字体链接(2020-5-3已解决)，已经注释掉谷歌字体（已解决），防止影响速度图片未加载404，获取头像时会提示电子邮箱被占用（升级valine.js已解决）。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java技巧</title>
+      <link href="/2022/01/25/9/"/>
+      <url>/2022/01/25/9/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一些好用的工具-和-方法-技巧"><a href="#一些好用的工具-和-方法-技巧" class="headerlink" title="一些好用的工具 和 方法,技巧"></a>一些好用的工具 和 方法,技巧</h2><h3 id="java中-String-转-JSON-或-对象"><a href="#java中-String-转-JSON-或-对象" class="headerlink" title="java中 String 转 JSON 或 对象"></a>java中 String 转 JSON 或 对象</h3><p>json需要阿里巴巴依赖</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JSONObject json = JSONObject.parseObject(JSON字符串));</span><br><span class="line">JSON.toJavaObject(json(如果为jsonArr那么返回的将会是一个List), Map.class(传入实体或map需要转换的类型,返回对应的类型数据));</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java开发工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐播放器左下角托盘</title>
+      <link href="/2021/12/06/18/"/>
+      <url>/2021/12/06/18/</url>
+      
+        <content type="html"><![CDATA[<h2 id="给博客添加一个播放器"><a href="#给博客添加一个播放器" class="headerlink" title="给博客添加一个播放器"></a>给博客添加一个播放器</h2><h3 id="先看效果"><a href="#先看效果" class="headerlink" title="先看效果"></a>先看效果</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060916742.png"></p><h3 id="官方教程"><a href="#官方教程" class="headerlink" title="官方教程"></a><a href="https://butterfly.js.org/posts/507c070f/">官方教程</a></h3><h3 id="首先安装aplayer插件"><a href="#首先安装aplayer插件" class="headerlink" title="首先安装aplayer插件"></a>首先安装aplayer插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure><p>可能新版本主题已经自带,可能不需要安装<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060918296.png"><br>安装之后，根据官方的提示关闭自带的aplayer插件。</p><!-- ![](https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812160551.png)![](https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812160619.png) --><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060919676.png"></p><h3 id="之后在需要的页面插入"><a href="#之后在需要的页面插入" class="headerlink" title="之后在需要的页面插入"></a>之后在需要的页面插入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;aplayer no-destroy&quot; data-id=&quot;000PeZCQ1i4XVs&quot; data-server=&quot;tencent&quot; data-type=&quot;artist&quot; data-fixed=&quot;true&quot; data-mini=&quot;true&quot; data-listFolded=&quot;false&quot; data-order=&quot;random&quot; data-preload=&quot;none&quot; data-autoplay=&quot;true&quot; muted&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><p>简单来说就是一个底部div<br>部分参数说明<br> data-id &#x3D; 你的音乐列表或者音乐连接id<br> data-server &#x3D; 服务商 腾讯 或者 网易云<br> data-type &#x3D; artist 为 列表<br> data-order &#x3D; random 为随机播放<br> …<br> 详细参数请看上一篇文章.<br>最后在主题配置中引入<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060925230.png"></p><p>另外如果主题开启pjax<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060935187.png"><br>就可以做到切换页面不中断音乐的效果</p><p>最后一套素质三连击(clean g s)</p><p>&#x3D;是不是很简单呀~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+            <tag> aplayer播放器插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>本博客修改方案</title>
+      <link href="/2021/11/17/3/"/>
+      <url>/2021/11/17/3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="本文章记录自定义修改博客的内容"><a href="#本文章记录自定义修改博客的内容" class="headerlink" title="本文章记录自定义修改博客的内容"></a>本文章记录自定义修改博客的内容</h2><h3 id="另外本博客添加了多个随机图片接口"><a href="#另外本博客添加了多个随机图片接口" class="headerlink" title="另外本博客添加了多个随机图片接口"></a>另外本博客添加了多个随机图片接口</h3><h3 id="修改valine获取QQ信息的接口"><a href="#修改valine获取QQ信息的接口" class="headerlink" title="修改valine获取QQ信息的接口"></a>修改valine获取QQ信息的接口</h3><h3 id="修改网站背景图占满屏幕-即-隐藏顶部图"><a href="#修改网站背景图占满屏幕-即-隐藏顶部图" class="headerlink" title="修改网站背景图占满屏幕 即 隐藏顶部图"></a>修改网站背景图占满屏幕 即 隐藏顶部图</h3><h3 id="添加天气预报"><a href="#添加天气预报" class="headerlink" title="添加天气预报"></a>添加天气预报</h3><h3 id="左下角播放器"><a href="#左下角播放器" class="headerlink" title="左下角播放器"></a>左下角播放器</h3><h3 id="添加了-侧边栏-访客ip-记录"><a href="#添加了-侧边栏-访客ip-记录" class="headerlink" title="添加了 侧边栏 访客ip 记录"></a>添加了 侧边栏 访客ip 记录</h3><h3 id="添加了-侧边栏-最新valin评论信息"><a href="#添加了-侧边栏-最新valin评论信息" class="headerlink" title="添加了 侧边栏 最新valin评论信息"></a>添加了 侧边栏 最新valin评论信息</h3><h3 id="添加了-valine评论-标签"><a href="#添加了-valine评论-标签" class="headerlink" title="添加了 valine评论 标签"></a>添加了 valine评论 标签</h3><h3 id="添加了一些颜色展示"><a href="#添加了一些颜色展示" class="headerlink" title="添加了一些颜色展示"></a>添加了一些颜色展示</h3><h3 id="添加了动画效果"><a href="#添加了动画效果" class="headerlink" title="添加了动画效果"></a>添加了动画效果</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+          <category> butterfly </category>
+          
+          <category> 自定义修改 </category>
+          
+          <category> 魔改 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo,自定义修改,魔改 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>给博客安装Waline评论系统</title>
+      <link href="/2021/08/20/15/"/>
+      <url>/2021/08/20/15/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>给博客添加gitalk评论系统,结合valine达成双评论系统</title>
+      <link href="/2021/08/19/13/"/>
+      <url>/2021/08/19/13/</url>
+      
+        <content type="html"><![CDATA[<h2 id="添加一个gitalk评论系统"><a href="#添加一个gitalk评论系统" class="headerlink" title="添加一个gitalk评论系统"></a>添加一个gitalk评论系统</h2><h3 id="开启gitalk评论和valine评论共存"><a href="#开启gitalk评论和valine评论共存" class="headerlink" title="开启gitalk评论和valine评论共存"></a>开启gitalk评论和valine评论共存</h3><p>在主题配置里吧这两个评论系统开启(注意缩进空格)<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819140424.png"><br>官方gitalk配置参数,跟着它一样配置就行了</p><p><a href="https://github.com/gitalk/gitalk">官方配置教程直达</a><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819140642.png"></p><h3 id="接下来创建一个仓库-名字可以随便取-我就取gitalk"><a href="#接下来创建一个仓库-名字可以随便取-我就取gitalk" class="headerlink" title="接下来创建一个仓库,名字可以随便取, 我就取gitalk"></a>接下来创建一个仓库,名字可以随便取, 我就取gitalk</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819141250.png"><br>创建好之后,点击设置<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819141536.png"><br>再点击Developer settings<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819141611.png"><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819142009.png"><br>参数第一个填仓库名称,之后几个填你的博客域名<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819141831.png"><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819141942.png"><br>打开后记住你的密钥 Client ID 和 Client Secret 很重要<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819142122.png"><br>接下来打开主题配置文件找到gitalk配置<br>把之前获取 Client ID 和 Client Secret 分别填到 client_id 和 client_secret 里面。<br>repo 填一个仓库名就好了。</p><p>owner 填自己的 github 账号名。</p><p>admin 填 repo 仓库的拥有者，hexo 解析的时候会使用 admin&#x2F;repo 去定位仓库的位置。<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819142427.png"><br>完成之后 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo s</span><br></pre></td></tr></table></figure><p>效果(可能需要初始化,登录点击一下就可以了)<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210819142709.png"></p><h4 id="如果此文章对你有用的话-收藏一下-评论一下吧"><a href="#如果此文章对你有用的话-收藏一下-评论一下吧" class="headerlink" title="如果此文章对你有用的话,收藏一下,评论一下吧~"></a>如果此文章对你有用的话,收藏一下,评论一下吧~</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> gitalk </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+            <tag> gitalk </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>给播客添加一个播放器</title>
+      <link href="/2021/08/12/14/"/>
+      <url>/2021/08/12/14/</url>
+      
+        <content type="html"><![CDATA[<h2 id="给博客添加一个播放器"><a href="#给博客添加一个播放器" class="headerlink" title="给博客添加一个播放器"></a>给博客添加一个播放器</h2><h3 id="先看效果"><a href="#先看效果" class="headerlink" title="先看效果"></a>先看效果</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812160154.png"></p><h3 id="官方教程"><a href="#官方教程" class="headerlink" title="官方教程"></a><a href="https://butterfly.js.org/posts/507c070f/">官方教程</a></h3><h3 id="首先安装aplayer插件"><a href="#首先安装aplayer插件" class="headerlink" title="首先安装aplayer插件"></a>首先安装aplayer插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure><p>安装之后，根据官方的提示关闭自带的aplayer插件。</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812160551.png"></p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812160619.png"></p><h3 id="之后在需要的页面插入"><a href="#之后在需要的页面插入" class="headerlink" title="之后在需要的页面插入"></a>之后在需要的页面插入</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812161819.png"><br>分别代表的意思</p><figure class="highlight plaintext"><figcaption><span>歌曲/列表/专辑 服务商    一般把000PeZCQ1i4XVs修改为你的音乐列表id，tencent为服务商 artist为播放方式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;000PeZCQ1i4XVs&quot; &quot;tencent&quot; &quot;artist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure><p>接下来获取链接id(你也可以现在就运行看看效果<del>)<br>打开qq音乐官网,找到我的音乐歌单打开</del><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812161136.png"><br>复制地址栏上的id<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812161224.png"><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812161258.png"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;1503100241&quot; &quot;tencent&quot; &quot;playlist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure><p>部分配置参数<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210812161543.png"></p><figure class="highlight plaintext"><figcaption><span>id:''</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;id:1503100241&quot; &quot;server:tencent&quot; &quot;playlist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure><h3 id="小知识"><a href="#小知识" class="headerlink" title="小知识!"></a>小知识!</h3><p>我们知道 在markdown中语法比较简单<br>比如<br>1.(# 会被渲染成 h1 标签)<br>2.(## &#x3D; h2)<br>3.(### &#x3D; h3)<br>……<br>我们添加播放器时用的是</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;000PeZCQ1i4XVs&quot; &quot;tencent&quot; &quot;artist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure><p>他最终会被渲染成</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;aplayer-uxAIfEUs&quot; class=&quot;aplayer aplayer-tag-marker meting-tag-marker&quot; data-id=&quot;000PeZCQ1i4XVs&quot; data-server=&quot;tencent&quot; data-type=&quot;artist&quot; data-mode=&quot;circulation&quot; data-autoplay=&quot;false&quot; data-mutex=&quot;true&quot; data-listmaxheight=&quot;340px&quot; data-preload=&quot;auto&quot; data-theme=&quot;#3F51B5&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060930844.png"></p><p>比如这样<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202112060931417.png"><br>两者 效果一样<br>最后一套素质三连击(clean g s)</p><p>&#x3D;是不是很简单呀~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+            <tag> aplayer播放器插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>给小博客新增一个天气预报效果</title>
+      <link href="/2021/08/11/11/"/>
+      <url>/2021/08/11/11/</url>
+      
+        <content type="html"><![CDATA[<h2 id="给博客新增左上角天气预报"><a href="#给博客新增左上角天气预报" class="headerlink" title="给博客新增左上角天气预报"></a>给博客新增左上角天气预报</h2><h3 id="百度搜索天气预报插件"><a href="#百度搜索天气预报插件" class="headerlink" title="百度搜索天气预报插件"></a>百度搜索天气预报插件</h3><p>这些插件操作方法都很简单,随便选择一个<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811161822.png"><br>各式各样的插件,然后点击获取代码<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811162009.png"><br>比如说这个<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811162143.png"><br>我们复制它,到我们想要放置的页面直接放上就行了,比如说我放在hello页面上<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811162458.png"><br>保存然后<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811162614.png"><br>素质三连击!<br>效果展示!<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811163017.png"></p><p>这样如果你要每个文章都放的话可以放在主题配置里!<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210811163336.png"><br>把它放在主题配置bottom下,这样他就会在生成的时候在每个页面添加天气预报了!<br>如果此文章对你帮助的话,点个收藏吧!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 天气预报 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> 天气预报 </tag>
+            
+            <tag> 插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初步解决valine自动休眠流控的问题</title>
+      <link href="/2021/08/11/6/"/>
+      <url>/2021/08/11/6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="唤醒leancound自动休眠"><a href="#唤醒leancound自动休眠" class="headerlink" title="唤醒leancound自动休眠"></a>唤醒leancound自动休眠</h2><h3 id="1-使用官方定时器"><a href="#1-使用官方定时器" class="headerlink" title="1.使用官方定时器"></a>1.使用官方定时器</h3><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810102152.png"></p><h3 id="2-使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题"><a href="#2-使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题" class="headerlink" title="2.使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题"></a>2.使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题</h3><p>注册cron-job帐号<br>注册地址：<a href="https://cron-job.org/en/signup/">直达</a></p><p>注册时的时区请选择Asia&#x2F;Shanghai<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810102411.png"><br>注册</p><p>添加一个计划任务<br>登陆之后依次点击Members,cronjobs,Create cronjob<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810102439.png"><br>First</p><p>Title, Address</p><p>Title可以随便填一个<br>Address填写你的云引擎环境变量的ADMIN_URL，也就是Leancloud的Web 主机域名。如果你用的我Valine添加博主标签及评论微信、QQ通知文章里的最新版的仓库，还需要在后面加上&#x2F;start，当然也可以不加，加上会有唤醒日志。<br>Schedule</p><p>选择User-defined进行自定义设置<br>Days of month: 全选<br>Days of week: 全选<br>Months: 全选<br>Hours: 你需要在哪个时间段唤醒就选择什么<br>Minutes: 选择0,20,40<br>按住Ctrl可多选<br>Notifications</p><p>可以不用修改，也可以根据自己的需要修改<br>Common</p><p>勾选Save responses, 保存唤醒日志<br>点击Create cronjob</p><h3 id="其他-使用网站监控软件-或者-一些定时器-不停地每隔一段时间访问一次-leancound自己的云引擎域名"><a href="#其他-使用网站监控软件-或者-一些定时器-不停地每隔一段时间访问一次-leancound自己的云引擎域名" class="headerlink" title="其他 使用网站监控软件 或者 一些定时器 不停地每隔一段时间访问一次 leancound自己的云引擎域名"></a>其他 使用网站监控软件 或者 一些定时器 不停地每隔一段时间访问一次 leancound自己的云引擎域名</h3><p>至此~ 感谢,喜欢的话点个收藏吧~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+            <tag> 流控 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>给博客新增一个valine评论系统</title>
+      <link href="/2021/08/10/16/"/>
+      <url>/2021/08/10/16/</url>
+      
+        <content type="html"><![CDATA[<p>Valine Admin 是 Valine 评论系统的扩展和增强，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能。支持完全自定义的邮件通知模板。基于Akismet API实现准确的垃圾评论过滤。此外，使用云函数等技术解决了免费版云引擎休眠问题，支持云引擎自动唤醒，漏发邮件自动补发。兼容云淡风轻及Deserts维护的多版本Valine。</p><h2 id="butterfly主题安装valine"><a href="#butterfly主题安装valine" class="headerlink" title="butterfly主题安装valine"></a>butterfly主题安装valine</h2><h3 id="butterfly主题已经自带了valine-js-用户只需要配置一下信息就可以了"><a href="#butterfly主题已经自带了valine-js-用户只需要配置一下信息就可以了" class="headerlink" title="butterfly主题已经自带了valine.js,用户只需要配置一下信息就可以了"></a>butterfly主题已经自带了valine.js,用户只需要配置一下信息就可以了</h3><h3 id="主题配置开启valine评论-如果有多个评论可以像我这样-但是最多两个"><a href="#主题配置开启valine评论-如果有多个评论可以像我这样-但是最多两个" class="headerlink" title="主题配置开启valine评论,如果有多个评论可以像我这样,但是最多两个!"></a>主题配置开启valine评论,如果有多个评论可以像我这样,但是最多两个!</h3><p>在主题配置里300行左右配置use 为 valine</p><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810094242.png"></p><h3 id="valine配置"><a href="#valine配置" class="headerlink" title="valine配置"></a>valine配置</h3><p>最后的valine大概是这样的;<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810094623.png"></p><p>接下来怎么获取这些参数~</p><h3 id="可以参考valine-admin官方教程"><a href="#可以参考valine-admin官方教程" class="headerlink" title="可以参考valine-admin官方教程"></a>可以参考valine-admin官方教程</h3><p><a href="https://github.com/DesertsP/Valine-Admin">valine官方配置</a></p><h3 id="登录-x2F-注册一个leancound用来储存评论-可能需要挂代理"><a href="#登录-x2F-注册一个leancound用来储存评论-可能需要挂代理" class="headerlink" title="登录&#x2F;注册一个leancound用来储存评论(可能需要挂代理)"></a>登录&#x2F;注册一个leancound用来储存评论(可能需要挂代理)</h3><p>请先登录或注册 LeanCloud, 进入控制台后点击左下角创建应用：<br><a href="https://console.leancloud.cn/">直达</a><br>然后你就可以从这里看你的appid 和appkey  把他填入到 butterfly主题配置的valine配置去<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810100229.png"><br>你需要在设置你配置一些你的参数,可以参考官方的配置,部分配置可以模仿官方的填入进去<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810101410.png"><br>可以看我的~<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810101749.png"><br>使用官方仓库 <a href="https://github.com/DesertsP/Valine-Admin.git">https://github.com/DesertsP/Valine-Admin.git</a><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810101826.png"><br>最后还需要在<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810100403.png"><br>这里配置你的域名白名单<br>最后在重新清除构建运行就能在本地看到你的评论了(如果提示301等错误检查域名白名单配置了没有,本地应该是没问题的本地也提示301那就把127.0.0.1配置到安全域名)<br>如果此文章对你有用的话,点个收藏吧~~~爱你哟~<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210810100840.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> butteerfly主题. </category>
+          
+          <category> hexo </category>
+          
+          <category> valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+            <tag> valine </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo+butterfly从零开始学基础(跟换主题)</title>
+      <link href="/2021/07/31/12/"/>
+      <url>/2021/07/31/12/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.一键搭建好的默认网站</p><h3 id="第一步：先看一下结构"><a href="#第一步：先看一下结构" class="headerlink" title="第一步：先看一下结构"></a>第一步：先看一下结构</h3><p>新创建的应该是这样 2021年7月30日15:17:47<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730152124.png"></p><p>接下来更换默认的主题  此时使用 butteerfly主题(大佬) <a href="https://butterfly.js.org/">直达大佬博客</a><br>主题配置都在这里~~~~~~~~~~~~~~~~~~~~</p><figure class="highlight bash"><figcaption><span>cmd依旧在博客目录运行,可能有点慢</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>接下来区分根目录 和 主题目录下的 _config配置文件<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730153535.png"><br>再把 主题目录下的 _config复制一个出来取名为 _config.butterfly.yml 并且移动到 根目录 ↑<br>之后打开 根目录下的 _config文件修改100行左右的 theme: butterfly<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730153757.png"><br>最后<br>hexo clean 清理本地未更新的文件<br>hexo g 重新生成网页<br>hexo s 本地运行测试<br>打开网页你就会看见新的界面出现了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node.js </category>
+          
+          <category> hexo </category>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly主题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo+butterfly从零开始学基础(搭建基础网站)</title>
+      <link href="/2021/07/30/17/"/>
+      <url>/2021/07/30/17/</url>
+      
+        <content type="html"><![CDATA[<p>现在随着计算机的飞速发展，拥有一个属于自己的博客，是一件非常平常的事。使用hexo搭建一个属于自己的个人博客，是即快捷又美观的一种方式，也是非常受到人们的喜爱的。接下来我将带领大家一起搭建自己的博客。<a href="https://hexo.io/">Hexo官网</a>，官网里有很多教程，插件，好看有趣的主题。hexo是是基于node.js的小型博客。</p><h2 id="准备工作（搭建本地环境）"><a href="#准备工作（搭建本地环境）" class="headerlink" title="准备工作（搭建本地环境）"></a>准备工作（搭建本地环境）</h2><p>电脑（这是必须的嘛QAQ，没电脑怎么弄）<br>node.js  强大的JS环境<a href="https://nodejs.org/en/">快捷电梯</a>下载稳定版<br>git      代码管理工具<a href="https://git-scm.com/">快捷电梯</a>下载最新稳定版</p><p>下载之后一直默认点安装（默认安装C盘就行，以免以后出现各种问题，反正也才几M….你不会舍不得吧…）网上也有一些安装教程，都一样！<br>安装步骤除了保存地址自己该，其他全部默认</p><h3 id="第一步：新建文件夹来存放hexo文件"><a href="#第一步：新建文件夹来存放hexo文件" class="headerlink" title="第一步：新建文件夹来存放hexo文件"></a>第一步：新建文件夹来存放hexo文件</h3><p>这一步是为了给你的博客找一个合适的位置。新建的文件夹的命名是随意的。<br>创建好在资源管理器路径输入cmd可以直接进入到此目录<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/createfile.png" alt="创建文件夹"><br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730142244.png" alt="cmd进入此目录"><br>接着使用 npm 包管理器安装 hexo </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>可能会出现安装失败的情况,原因可能是中国网络限制访问外网的问题,与访问github相似;<br>解决办法,搭梯子……<br>安装好之后,cmd依旧在此文件夹目录(你可以尝试hexo -v)查看版本号<br>然后开始创建 默认的 博客目录,可能也会很久,毕竟源码也在github </p><figure class="highlight bash"><figcaption><span>例如</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init 网站目录名字</span><br><span class="line">$ hexo init mywangzhan</span><br></pre></td></tr></table></figure><p>很多人回去换git npm管理器的镜像源  比如 taobao aliyun<br>生成之后的网站像这样<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730143917.png"></p><figure class="highlight bash"><figcaption><span>运行(hexo s 就是 hexo server)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730150020.png"><br>访问网站 浏览器地址输入 localhost:4000 也可以127.0.0.1:4000<br>这样你就可以看到简陋的小网站啦！<br><img src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210730151003.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node.js </category>
+          
+          <category> hexo </category>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 搭建hexo博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot获取访问者ip以及跨域处理</title>
+      <link href="/2021/04/29/4/"/>
+      <url>/2021/04/29/4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在springboot中使用-跨域-以及-来访者ip获取"><a href="#在springboot中使用-跨域-以及-来访者ip获取" class="headerlink" title="在springboot中使用 跨域 以及 来访者ip获取"></a>在springboot中使用 跨域 以及 来访者ip获取</h2><h3 id="使用-CrossOrigin-注解允许后台跨域"><a href="#使用-CrossOrigin-注解允许后台跨域" class="headerlink" title="使用 @CrossOrigin 注解允许后台跨域"></a>使用 @CrossOrigin 注解允许后台跨域</h3><figure class="highlight bash"><figcaption><span>在类上注解这个类</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ @CrossOrigin </span><br><span class="line">$ public class text()</span><br></pre></td></tr></table></figure><h3 id="获取ip地址-方法里传入HttpServletRequest-request-然后调用request"><a href="#获取ip地址-方法里传入HttpServletRequest-request-然后调用request" class="headerlink" title="获取ip地址  方法里传入HttpServletRequest request  然后调用request"></a>获取ip地址  方法里传入HttpServletRequest request  然后调用request</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ public void text(HttpServletRequest request)</span><br><span class="line">$  System.out.println(<span class="string">&quot;来访者ip可能是:&quot;</span>+request.getRemoteAddr())</span><br></pre></td></tr></table></figure><h3 id="可能前端处理过代理设置-会获取到127-0-0-1或者主机ip-而不是访问者ip"><a href="#可能前端处理过代理设置-会获取到127-0-0-1或者主机ip-而不是访问者ip" class="headerlink" title="可能前端处理过代理设置 会获取到127.0.0.1或者主机ip 而不是访问者ip"></a>可能前端处理过代理设置 会获取到127.0.0.1或者主机ip 而不是访问者ip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ String ip = request.getHeader(<span class="string">&quot;x-forwarded-for&quot;</span>);</span><br><span class="line">$   <span class="keyword">if</span>(ip ==null || ip.length() ==0 || <span class="string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;</span><br><span class="line">$     ip = request.getHeader(<span class="string">&quot;Proxy-Client-IP&quot;</span>);</span><br><span class="line">$    &#125;</span><br><span class="line">$   <span class="keyword">if</span>(ip ==null || ip.length() ==0 || <span class="string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;</span><br><span class="line">$      ip = request.getHeader(<span class="string">&quot;WL-Proxy-Client-IP&quot;</span>);</span><br><span class="line">$    &#125;</span><br><span class="line">$   <span class="keyword">if</span>(ip ==null || ip.length() ==0 || <span class="string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;</span><br><span class="line">$     ip = request.getRemoteAddr();</span><br><span class="line">$    &#125;</span><br><span class="line">$     System.out.println(<span class="string">&quot;真实的ip可能是:&quot;</span>+ip);</span><br></pre></td></tr></table></figure><h3 id="一个控制实现多个service"><a href="#一个控制实现多个service" class="headerlink" title="一个控制实现多个service"></a>一个控制实现多个service</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  new对象 传值 调用service</span><br></pre></td></tr></table></figure><h3 id="vue前端处理跨域"><a href="#vue前端处理跨域" class="headerlink" title="vue前端处理跨域"></a>vue前端处理跨域</h3><h5 id="在vue-config-js中添加此代码-此代码会在请求地址时候增加一个前缀api-请求地址就可以了直接写-get-“-x2F-“"><a href="#在vue-config-js中添加此代码-此代码会在请求地址时候增加一个前缀api-请求地址就可以了直接写-get-“-x2F-“" class="headerlink" title="在vue.config.js中添加此代码(此代码会在请求地址时候增加一个前缀api),请求地址就可以了直接写 get(“&#x2F;“)"></a>在vue.config.js中添加此代码(此代码会在请求地址时候增加一个前缀api),请求地址就可以了直接写 get(“&#x2F;“)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$  module.exports = &#123;</span><br><span class="line">$    lintOnSave: false,</span><br><span class="line">$    devServer: &#123;</span><br><span class="line">$        overlay: &#123;</span><br><span class="line">$            warning: false,</span><br><span class="line">$            errors: false</span><br><span class="line">$        &#125;,</span><br><span class="line">$       proxy: &#123;</span><br><span class="line">$            &#x27;/api&#x27;: &#123;</span><br><span class="line">$                // 此处的写法，目的是为了 将 /api 替换成 https://www.baidu.com/</span><br><span class="line">$                target: &#x27;http://127.0.0.1:1234/&#x27;,</span><br><span class="line">$                // 允许跨域</span><br><span class="line">$                changeOrigin: true,</span><br><span class="line">$                ws: true,</span><br><span class="line">$                pathRewrite: &#123;</span><br><span class="line">$                    &#x27;^/api&#x27;: &#x27;&#x27;</span><br><span class="line">$                &#125;</span><br><span class="line">$            &#125;</span><br><span class="line">$        &#125;</span><br><span class="line">$    &#125;,</span><br><span class="line">$ &#125; </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+          <category> Axios </category>
+          
+          <category> springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> Axios </tag>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/03/02/1/"/>
+      <url>/2020/03/02/1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="世界你好"><a href="#世界你好" class="headerlink" title="世界你好!"></a>世界你好!</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

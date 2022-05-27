@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>valine评论修改方案 | 是吃草莓的小白兔呀❤</title><meta name="keywords" content="butterfly主题,valine"><meta name="author" content="chrelyonly"><meta name="copyright" content="chrelyonly"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本文章记录valine评论,自定义修改的方法 记录修改 valine.js,如果没有就保存一份到本地然后修改引入本地valine valine修改添加 小标签(仅valine.js 1.4.16版本)开启昵称输入qq自动识别由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍修改valine.pug文件新增 (enableQQ: #{theme.valine.enableQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="valine评论修改方案">
+<meta property="og:url" content="https://chrelyonly.cn/2022/02/20/7/index.html">
+<meta property="og:site_name" content="是吃草莓的小白兔呀❤">
+<meta property="og:description" content="本文章记录valine评论,自定义修改的方法 记录修改 valine.js,如果没有就保存一份到本地然后修改引入本地valine valine修改添加 小标签(仅valine.js 1.4.16版本)开启昵称输入qq自动识别由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍修改valine.pug文件新增 (enableQQ: #{theme.valine.enableQ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api.dujin.org/pic/">
+<meta property="article:published_time" content="2022-02-20T06:17:06.000Z">
+<meta property="article:modified_time" content="2022-05-27T02:26:56.745Z">
+<meta property="article:author" content="chrelyonly">
+<meta property="article:tag" content="butterfly主题">
+<meta property="article:tag" content="valine">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.dujin.org/pic/"><link rel="shortcut icon" href="/src/img/favicon.ico"><link rel="canonical" href="https://chrelyonly.cn/2022/02/20/7/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6da08242c766b7a411281842f3164007";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"信息","messageNext":"自上次更新后天，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'valine评论修改方案',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-27 10:26:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link charset="utf-8" href="/src/css/mycss.css" rel="stylesheet" ><style type="text/css">#toggle-sidebar {bottom: 80px}</style><style type="text/css">.aplayer-body {bottom: 25px}</style><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210818143927.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.chrelyonly.cn"><i class="fa-fw fa fa-home"></i><span> 回家</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/imggallert/"><i class="fa-fw fa fa-window-maximize"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 读书</span></a></div><div class="menus_item"><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://api.dujin.org/pic/')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">是吃草莓的小白兔呀❤</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.chrelyonly.cn"><i class="fa-fw fa fa-home"></i><span> 回家</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/imggallert/"><i class="fa-fw fa fa-window-maximize"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 读书</span></a></div><div class="menus_item"><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 微语</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div><div id="top_right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="swith-button"><a class="site-page social-icon search"><i class="fas fa-adjust"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">valine评论修改方案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-20T06:17:06.000Z" title="发表于 2022-02-20 14:17:06">2022-02-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-27T02:26:56.745Z" title="更新于 2022-05-27 10:26:56">2022-05-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/butteerfly%E4%B8%BB%E9%A2%98/">butteerfly主题</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/butteerfly%E4%B8%BB%E9%A2%98/hexo/">hexo</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/butteerfly%E4%B8%BB%E9%A2%98/hexo/valine/">valine</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="valine评论修改方案"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本文章记录valine评论,自定义修改的方法</p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h2 id="修改-valine-js-如果没有就保存一份到本地然后修改"><a href="#修改-valine-js-如果没有就保存一份到本地然后修改" class="headerlink" title="修改 valine.js,如果没有就保存一份到本地然后修改"></a>修改 valine.js,如果没有就保存一份到本地然后修改</h2><p>引入本地valine<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201440167.png"></p>
+<h2 id="valine修改添加-小标签-仅valine-js-1-4-16版本"><a href="#valine修改添加-小标签-仅valine-js-1-4-16版本" class="headerlink" title="valine修改添加 小标签(仅valine.js 1.4.16版本)"></a>valine修改添加 小标签(仅valine.js 1.4.16版本)</h2><h3 id="开启昵称输入qq自动识别"><a href="#开启昵称输入qq自动识别" class="headerlink" title="开启昵称输入qq自动识别"></a>开启昵称输入qq自动识别</h3><h3 id="由于新版主题为很多功能进行了-无用参数剔除-可以去看主题4-0版本的更新介绍"><a href="#由于新版主题为很多功能进行了-无用参数剔除-可以去看主题4-0版本的更新介绍" class="headerlink" title="由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍"></a>由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍</h3><h3 id="修改valine-pug文件"><a href="#修改valine-pug文件" class="headerlink" title="修改valine.pug文件"></a>修改valine.pug文件</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201431105.png"><br>新增 (enableQQ: #{theme.valine.enableQQ},) 为qq头像识别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">masterS: &#x27;#&#123;theme.valine.masterS&#125;&#x27;,</span><br><span class="line">friendS: &#x27;#&#123;theme.valine.friendS&#125;&#x27;,</span><br><span class="line">enableQQ: #&#123;theme.valine.enableQQ&#125;,</span><br></pre></td></tr></table></figure>
+<p>修改主题配置文件<br>同样新增</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enableQQ: true</span><br><span class="line">masterS: </span><br><span class="line">friendS: </span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201433575.png"></p>
+<h4 id="修改valine-js"><a href="#修改valine-js" class="headerlink" title="修改valine.js"></a>修改valine.js</h4><p>搜索</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pageSize:10,recordIP:!0</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201443429.png"><br>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterS:&quot;&quot;,</span><br><span class="line">friendS:[],</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201444988.png"></p>
+<p>搜索,如果用其他方法能定位到也可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;var o=(0,S.default)(&#x27;&lt;div class=&quot;vcard&quot; id=&quot;&#x27;+t.id+&#x27;&quot;&gt;&lt;/div&gt;&#x27;),i=t.get(&quot;ua&quot;),a=&quot;&quot;;i&amp;&amp;!/ja/.test(e.cfg.lang)&amp;&amp;(i=S.default.detect(i),a=i.os?&#x27;&lt;span class=&quot;vsys&quot;&gt;&#x27;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master//img/202202201451971.png"><br>修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	let temptel;</span><br><span class="line">	let friendS = e.cfg.friendS</span><br><span class="line">	let masterS = e.cfg.masterS</span><br><span class="line">	friendS = friendS.split(&quot;,&quot;)</span><br><span class="line">	if(t.get(&quot;mail&quot;) == masterS)&#123;</span><br><span class="line">		temptel = &quot;&lt;span class=&#x27;vsys masters&#x27; id=&#x27;masters&#x27;&gt;是我呀❤(●&#x27;◡&#x27;●)&quot;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		for (let indexS = 0; indexS &lt; friendS.length; indexS++) &#123;</span><br><span class="line">			if(t.get(&quot;mail&quot;) == friendS[indexS])&#123;</span><br><span class="line">				temptel = &quot;&lt;span class=&#x27;vsys friends&#x27; id=&#x27;friends&#x27;&gt;朋友们忄&quot;</span><br><span class="line">				break</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				temptel = &quot;&lt;span class=&#x27;vsys stranger&#x27; id=&#x27;stranger&#x27;&gt;陌生人QAQ&quot;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	var o=(0,S.default)(&#x27;&lt;div class=&quot;vcard&quot; id=&quot;&#x27;+t.id+&#x27;&quot;&gt;&lt;/div&gt;&#x27;),i=t.get(&quot;ua&quot;),a=&quot;&quot;;i&amp;&amp;!/ja/.test(e.cfg.lang)&amp;&amp;(i=S.default.detect(i),a=i.os?</span><br><span class="line">temptel</span><br><span class="line">+</span><br><span class="line">&#x27;&lt;/span&gt;&lt;span class=&quot;vsys&quot;&gt;&#x27;</span><br></pre></td></tr></table></figure>
+<p>需添加自定义css达到颜色区分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* 修改valine评论标签颜色 */</span><br><span class="line">/* 主人 */</span><br><span class="line">#masters&#123;</span><br><span class="line">  background-color: #ffa51e;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">/* 朋友 */</span><br><span class="line">#friends&#123;</span><br><span class="line">  background-color: #65C6FF;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">/* 陌生人 */</span><br><span class="line">#stranger&#123;</span><br><span class="line">  background-color: #bebab3;</span><br><span class="line">  color: #ffffff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后保存即可</p>
+<h2 id="新增qq提醒功能-目前qqserver酱被tx制裁-可能没用"><a href="#新增qq提醒功能-目前qqserver酱被tx制裁-可能没用" class="headerlink" title="新增qq提醒功能(目前qqserver酱被tx制裁,可能没用)"></a>新增qq提醒功能(目前qqserver酱被tx制裁,可能没用)</h2><h3 id="qq提醒"><a href="#qq提醒" class="headerlink" title="qq提醒"></a>qq提醒</h3><p>本期来给valine对接qq,微信提醒,在线修改</p>
+<h4 id="回到之前搭建valine-admin评论管理"><a href="#回到之前搭建valine-admin评论管理" class="headerlink" title="回到之前搭建valine-admin评论管理"></a>回到之前搭建valine-admin评论管理</h4><h4 id="首先-fork-一下你所部署的仓库"><a href="#首先-fork-一下你所部署的仓库" class="headerlink" title="首先 fork 一下你所部署的仓库"></a>首先 fork 一下你所部署的仓库</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141238837.png"></p>
+<h4 id="在这里看"><a href="#在这里看" class="headerlink" title="在这里看"></a>在这里看</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141238618.png"></p>
+<h4 id="之后你就会在自己的github上找到所对应的仓库"><a href="#之后你就会在自己的github上找到所对应的仓库" class="headerlink" title="之后你就会在自己的github上找到所对应的仓库"></a>之后你就会在自己的github上找到所对应的仓库</h4><p>然后把 leancloud 的仓库地址换成自己的</p>
+<h4 id="再打开这个文件编辑-添加-axios请求工具"><a href="#再打开这个文件编辑-添加-axios请求工具" class="headerlink" title="再打开这个文件编辑, 添加 axios请求工具"></a>再打开这个文件编辑, 添加 axios请求工具</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141239087.png"> </p>
+<h4 id="在-if-error-后加上"><a href="#在-if-error-后加上" class="headerlink" title="在 if(error){} 后加上"></a>在 if(error){} 后加上</h4><p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141253461.png"></p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> console.log(&#x27;准备提醒&#x27;)</span><br><span class="line">try&#123;</span><br><span class="line">  if (process.env.QMSG_KEY != null) &#123;</span><br><span class="line">              console.log(&#x27;开始QQ提醒&#x27;)</span><br><span class="line">              axios(&#123;</span><br><span class="line">                  method: &#x27;post&#x27;,</span><br><span class="line">                  url: `https://qmsg.zendee.cn/send/$&#123;process.env.QMSG_KEY&#125;`,</span><br><span class="line">                  data: &#x27;msg=&#x27;+ &#x27;博客有新消息啦!          ❤&#x27; + NICK + &#x27;❤偷偷评论了你,快去看看吧&#x27;,</span><br><span class="line">                  headers: &#123;</span><br><span class="line">                      &#x27;Content-type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              .then(function (response) &#123;</span><br><span class="line">                  if (response.status === 200 &amp;&amp; response.data.errmsg === &#x27;success&#x27;) &#123;</span><br><span class="line">                      console.log(&#x27;已QQ提醒站长&#x27;)</span><br><span class="line">                  &#125; else &#123;</span><br><span class="line">                      console.warn(&#x27;qq提醒失败:&#x27;, response.data)</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              .catch(function (error) &#123;</span><br><span class="line">                  console.error(&#x27;提醒失败:&#x27;, error.message)</span><br><span class="line">               &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">&#125;catch(e)&#123;</span><br><span class="line">  console.log(e)</span><br><span class="line">  //TODO handle the exception</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141254788.png"></p>
+<h4 id="然后保存-提交更改"><a href="#然后保存-提交更改" class="headerlink" title="然后保存 提交更改"></a>然后保存 提交更改</h4><h4 id="之后在"><a href="#之后在" class="headerlink" title="之后在"></a>之后在</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141257036.png"><br>新增一个 QMSG_KEY 变量  值为 你的 密钥</p>
+<h4 id="获取qq通知密钥"><a href="#获取qq通知密钥" class="headerlink" title="获取qq通知密钥"></a>获取qq通知密钥</h4><h4 id="注册一个账号-通过后台就可以获取到所对应的密钥"><a href="#注册一个账号-通过后台就可以获取到所对应的密钥" class="headerlink" title="注册一个账号  通过后台就可以获取到所对应的密钥"></a>注册一个账号  通过后台就可以获取到所对应的密钥</h4><p><a target="_blank" rel="noopener" href="https://qmsg.zendee.cn/">https://qmsg.zendee.cn/</a><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141258361.png"></p>
+<h5 id="最后在部署一下"><a href="#最后在部署一下" class="headerlink" title="最后在部署一下"></a>最后在部署一下</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/img/202111141300796.png"></p>
+<p>你也可以直接使用我的github仓库</p>
+<h2 id="修改qq信息获取接口"><a href="#修改qq信息获取接口" class="headerlink" title="修改qq信息获取接口"></a>修改qq信息获取接口</h2><h3 id="butterfly主题4-0以上-即valine-js-1-4-16"><a href="#butterfly主题4-0以上-即valine-js-1-4-16" class="headerlink" title="(butterfly主题4.0以上,即valine.js 1.4.16)"></a>(butterfly主题4.0以上,即valine.js 1.4.16)</h3><p>仿照旧文档搜索</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url:&quot;//valine.api.ioliu.cn/getqqinfo&quot;,method:&quot;POST&quot;,body:&#123;qq:e&#125;&#125;).then(function(e)&#123;e.json().then(function(e)&#123;</span><br></pre></td></tr></table></figure>
+<p>替换为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">url:&quot;https://api.usuuu.com/qq/&quot;+e,method:&quot;GET&quot;,body:&#123;qq:e&#125;&#125;).then(function(e)&#123;</span><br><span class="line">console.log(&quot;QQ信息获取中...&quot;,e)</span><br><span class="line">e.json().then(function(e)&#123;</span><br><span class="line">	var inqqfo;</span><br><span class="line">	(e.errmsg,console.log(&quot;获取失败:&quot;+e)) || (inqqfo = &#123;&quot;pic&quot;: e.data.avatar,&quot;nick&quot;: e.data.name,&quot;qq&quot;: e.data.qq&#125;,</span><br><span class="line">	console.log(&quot;QQ信息获取OK&quot;),</span><br><span class="line">	console.log(e,inqqfo));</span><br><span class="line">	e=inqqfo;</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+<h3 id="butterfly主题4-0以下-即valine-js-1-4-4"><a href="#butterfly主题4-0以下-即valine-js-1-4-4" class="headerlink" title="(butterfly主题4.0以下,即valine.js 1.4.4)"></a>(butterfly主题4.0以下,即valine.js 1.4.4)</h3><p>先看原来的 </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142148.png"></p>
+<p>发现只有 qq邮箱头像获取了<br>看看请求头连接</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142318.png"></p>
+<p>请求连接  post请求 <a target="_blank" rel="noopener" href="https://valine.api.ioliu.cn/getqqinfo">https://valine.api.ioliu.cn/getqqinfo</a> 参数是  qq&#x3D;QQ号&amp;t&#x3D;时间   时间是他自己会加</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142421.png"></p>
+<p>再看他的响应 发现我们的  nick 昵称为空了  看一下头像地址pic</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142538.png"><br>发现头像是对的</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802142713.png"></p>
+<p>估计是官方的接口出了点问题,无法显示 qq 昵称<br>打开官方js看一下 通过 butterflt主题下的,valine.js 复制到浏览器打开</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802143027.png"></p>
+<p>看不懂直接搜索 刚才的请求地址 valine.api.ioliu.cn&#x2F;getqqinfo  找到了<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802143109.png"></p>
+<p>将这个js全部复制下来 新建个txt文件放到里面   随便给个名字   myvaline.js   不要忘记把后缀改成.js 然后放到 网站根目录下source下,新建个文件夹放着:例如   我放到  source&#x2F;src&#x2F;js&#x2F;下    </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802144250.png"></p>
+<p>将它换成新的qq信息接口就可以了,新的接口要注意他的返回参数是否与官方的一致,不一致的话自己顶一个变量接受一下<br>打开我们复制下来的js更换里面的代码<br>这里给出简单的更换方法:<br>ctrl+f找到  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>:<span class="string">&quot;POST&quot;</span>,url:<span class="string">&quot;//valine.api.ioliu.cn/getqqinfo&quot;</span>,data:&#123;qq:e&#125;,success:<span class="keyword">function</span>(e)&#123;</span><br></pre></td></tr></table></figure>
+<p>全部替换为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>:<span class="string">&quot;GET&quot;</span>,url:<span class="string">&quot;//api.usuuu.com/qq/&quot;</span>+e,data:&#123;&#125;,success:<span class="keyword">function</span>(e)&#123;var inqqfo = &#123;<span class="string">&quot;pic&quot;</span>: e.data.avatar,<span class="string">&quot;nick&quot;</span>: e.data.name,<span class="string">&quot;qq&quot;</span>: e.data.qq&#125;;console.log(<span class="string">&quot;QQ信息获取......&quot;</span>,e,inqqfo);e=inqqfo;</span><br></pre></td></tr></table></figure>
+<p>最后不要忘记了更换主题配置文件里的js引入哦~  路径就是source下的文件夹到文件</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210802144537.png"></p>
+<p>然后重新 hexo clean g s  评论系统输入qq号就可以看到qq信昵称了,<br>这里放上我修改好的js 直接更换引入连接就可以了.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valine: https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/myvaline_beta1.0.js</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chrelyonly.cn">chrelyonly</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chrelyonly.cn/2022/02/20/7/">https://chrelyonly.cn/2022/02/20/7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://chrelyonly.gitee.io" target="_blank">小白兔爱吃草莓 4.0</a> 许可协议。转载请注明来自 <a href="https://chrelyonly.cn" target="_blank">是吃草莓的小白兔呀❤</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/butterfly%E4%B8%BB%E9%A2%98/">butterfly主题</a><a class="post-meta__tags" href="/tags/valine/">valine</a></div><div class="post_share"><div class="social-share" data-image="https://api.dujin.org/pic/" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/ShareJS/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/ShareJS/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/24/10/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://acg.toubiec.cn/random.php" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">mybatis_plus的QueryWrapper高级用法</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/04/2/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.paulzzh.tech/touhou/random" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">更新说明</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/06/18/" title="音乐播放器左下角托盘"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.ixiaowai.cn/api/api.php" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">音乐播放器左下角托盘</div></div></a></div><div><a href="/2021/08/20/15/" title="给博客安装Waline评论系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://l-by.cn/api/api/api.php" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">给博客安装Waline评论系统</div></div></a></div><div><a href="/2021/08/10/16/" title="给博客新增一个valine评论系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.dujin.org/pic/" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">给博客新增一个valine评论系统</div></div></a></div><div><a href="/2021/08/19/13/" title="给博客添加gitalk评论系统,结合valine达成双评论系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.dujin.org/pic/" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">给博客添加gitalk评论系统,结合valine达成双评论系统</div></div></a></div><div><a href="/2021/08/12/14/" title="给播客添加一个播放器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.dmoe.cc/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">给播客添加一个播放器</div></div></a></div><div><a href="/2021/08/11/6/" title="初步解决valine自动休眠流控的问题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://acg.toubiec.cn/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-05-27</div><div class="title">初步解决valine自动休眠流控的问题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chrelyonly/cdn-speed@master/help/20210818143927.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">chrelyonly</div><div class="author-info__description">喜怒哀月</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><a id="card-info-btn" href="https://chrelyonly.cn"><i class="fab fa-home"></i><span>首页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chrelyonly" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1172576293@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">谢谢你点开了我的网站 ^_^</div></div><div class="card-widget userip" id="userip"><div class="item-headline"><i class="fa fa-mobile"></i><span>来访者欢迎你!</span></div><div class="item-content">访客信息获取中.....</div></div><div class="card-widget valineMessages" id="valineMessages"><div class="item-headline"><i class="fa fa-mobile"></i><span>最新valine评论!</span></div><div class="item-content">评论信息获取中.....</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-valine-js-%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%B0%B1%E4%BF%9D%E5%AD%98%E4%B8%80%E4%BB%BD%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%84%B6%E5%90%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">2.</span> <span class="toc-text">修改 valine.js,如果没有就保存一份到本地然后修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#valine%E4%BF%AE%E6%94%B9%E6%B7%BB%E5%8A%A0-%E5%B0%8F%E6%A0%87%E7%AD%BE-%E4%BB%85valine-js-1-4-16%E7%89%88%E6%9C%AC"><span class="toc-number">3.</span> <span class="toc-text">valine修改添加 小标签(仅valine.js 1.4.16版本)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E6%98%B5%E7%A7%B0%E8%BE%93%E5%85%A5qq%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB"><span class="toc-number">3.1.</span> <span class="toc-text">开启昵称输入qq自动识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B1%E4%BA%8E%E6%96%B0%E7%89%88%E4%B8%BB%E9%A2%98%E4%B8%BA%E5%BE%88%E5%A4%9A%E5%8A%9F%E8%83%BD%E8%BF%9B%E8%A1%8C%E4%BA%86-%E6%97%A0%E7%94%A8%E5%8F%82%E6%95%B0%E5%89%94%E9%99%A4-%E5%8F%AF%E4%BB%A5%E5%8E%BB%E7%9C%8B%E4%B8%BB%E9%A2%984-0%E7%89%88%E6%9C%AC%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.2.</span> <span class="toc-text">由于新版主题为很多功能进行了,无用参数剔除,可以去看主题4.0版本的更新介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9valine-pug%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">修改valine.pug文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9valine-js"><span class="toc-number">3.3.1.</span> <span class="toc-text">修改valine.js</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9Eqq%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD-%E7%9B%AE%E5%89%8Dqqserver%E9%85%B1%E8%A2%ABtx%E5%88%B6%E8%A3%81-%E5%8F%AF%E8%83%BD%E6%B2%A1%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">新增qq提醒功能(目前qqserver酱被tx制裁,可能没用)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qq%E6%8F%90%E9%86%92"><span class="toc-number">4.1.</span> <span class="toc-text">qq提醒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E5%88%B0%E4%B9%8B%E5%89%8D%E6%90%AD%E5%BB%BAvaline-admin%E8%AF%84%E8%AE%BA%E7%AE%A1%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text">回到之前搭建valine-admin评论管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A6%96%E5%85%88-fork-%E4%B8%80%E4%B8%8B%E4%BD%A0%E6%89%80%E9%83%A8%E7%BD%B2%E7%9A%84%E4%BB%93%E5%BA%93"><span class="toc-number">4.1.2.</span> <span class="toc-text">首先 fork 一下你所部署的仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E8%BF%99%E9%87%8C%E7%9C%8B"><span class="toc-number">4.1.3.</span> <span class="toc-text">在这里看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%8B%E5%90%8E%E4%BD%A0%E5%B0%B1%E4%BC%9A%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84github%E4%B8%8A%E6%89%BE%E5%88%B0%E6%89%80%E5%AF%B9%E5%BA%94%E7%9A%84%E4%BB%93%E5%BA%93"><span class="toc-number">4.1.4.</span> <span class="toc-text">之后你就会在自己的github上找到所对应的仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%8D%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91-%E6%B7%BB%E5%8A%A0-axios%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7"><span class="toc-number">4.1.5.</span> <span class="toc-text">再打开这个文件编辑, 添加 axios请求工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-if-error-%E5%90%8E%E5%8A%A0%E4%B8%8A"><span class="toc-number">4.1.6.</span> <span class="toc-text">在 if(error){} 后加上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%84%B6%E5%90%8E%E4%BF%9D%E5%AD%98-%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9"><span class="toc-number">4.1.7.</span> <span class="toc-text">然后保存 提交更改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%8B%E5%90%8E%E5%9C%A8"><span class="toc-number">4.1.8.</span> <span class="toc-text">之后在</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96qq%E9%80%9A%E7%9F%A5%E5%AF%86%E9%92%A5"><span class="toc-number">4.1.9.</span> <span class="toc-text">获取qq通知密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7-%E9%80%9A%E8%BF%87%E5%90%8E%E5%8F%B0%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%88%B0%E6%89%80%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AF%86%E9%92%A5"><span class="toc-number">4.1.10.</span> <span class="toc-text">注册一个账号  通过后台就可以获取到所对应的密钥</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E5%9C%A8%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%8B"><span class="toc-number">4.1.10.1.</span> <span class="toc-text">最后在部署一下</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9qq%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%E6%8E%A5%E5%8F%A3"><span class="toc-number">5.</span> <span class="toc-text">修改qq信息获取接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#butterfly%E4%B8%BB%E9%A2%984-0%E4%BB%A5%E4%B8%8A-%E5%8D%B3valine-js-1-4-16"><span class="toc-number">5.1.</span> <span class="toc-text">(butterfly主题4.0以上,即valine.js 1.4.16)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#butterfly%E4%B8%BB%E9%A2%984-0%E4%BB%A5%E4%B8%8B-%E5%8D%B3valine-js-1-4-4"><span class="toc-number">5.2.</span> <span class="toc-text">(butterfly主题4.0以下,即valine.js 1.4.4)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/15/8/" title="新博客预定中"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.ixiaowai.cn/api/api.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新博客预定中"/></a><div class="content"><a class="title" href="/2022/04/15/8/" title="新博客预定中">新博客预定中</a><time datetime="2022-04-15T03:05:52.000Z" title="发表于 2022-04-15 11:05:52">2022-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/25/5/" title="avue食用技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://acg.toubiec.cn/random.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="avue食用技巧"/></a><div class="content"><a class="title" href="/2022/03/25/5/" title="avue食用技巧">avue食用技巧</a><time datetime="2022-03-25T12:00:27.000Z" title="发表于 2022-03-25 20:00:27">2022-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/24/10/" title="mybatis_plus的QueryWrapper高级用法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://acg.toubiec.cn/random.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mybatis_plus的QueryWrapper高级用法"/></a><div class="content"><a class="title" href="/2022/03/24/10/" title="mybatis_plus的QueryWrapper高级用法">mybatis_plus的QueryWrapper高级用法</a><time datetime="2022-03-24T12:00:32.000Z" title="发表于 2022-03-24 20:00:32">2022-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/20/7/" title="valine评论修改方案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.dujin.org/pic/" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="valine评论修改方案"/></a><div class="content"><a class="title" href="/2022/02/20/7/" title="valine评论修改方案">valine评论修改方案</a><time datetime="2022-02-20T06:17:06.000Z" title="发表于 2022-02-20 14:17:06">2022-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/04/2/" title="更新说明"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.paulzzh.tech/touhou/random" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="更新说明"/></a><div class="content"><a class="title" href="/2022/02/04/2/" title="更新说明">更新说明</a><time datetime="2022-02-04T14:50:34.000Z" title="发表于 2022-02-04 22:50:34">2022-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By chrelyonly</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53010302001175"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/src/img/icp.png"/><span>滇公网安备 53010302001175号</span></a><br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><img class="icp-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/src/img/icp.png"><span>备案号：滇ICP备2021007084号</span></a><br><a href="https://icp.gov.moe/?keyword=20210209" target="_blank">萌ICP备20210209号</a><br/> 热情这东西其实也很脆弱,从来都只有好聚,我一直在等你，等死一样。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/pluginsSrc/instant.page/instantpage.js" type="module"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'yT6JGpmRszIr0QQuX52rAH0Q-gzGzoHsz',
+      appKey: 'bGzFSFBPvbYlbT8F2ztclshT',
+      avatar: 'monsterid',
+      serverURLs: '',
+      placeholder: '名称输入QQ号自动获取头像邮箱哦！',
+      masterS: '1172576293@qq.com',
+      friendS: '1564084197@qq.com,985390830@qq.com,1308168694@qq.com,1767807919@qq.com,823300630@qq.com',
+      enableQQ: 'true',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/src/js/myvaline20211107.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= '/pluginsSrc/gitalk/dist/gitalk.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '41f7564314acf05c2937',
+      clientSecret: 'd4a632cd040751c99733389786f42f807a75def3',
+      repo: 'chrelyonly-Gitalk.github.io',
+      owner: 'chrelyonly',
+      admin: ['chrelyonly'],
+      id: '9cd2694673d17cf2f0f5a2d014ad9220',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('/pluginsSrc/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="/src/js/config.js"></script><script src="https://blogapi.chrelyonly.cn/jquery.min.js"></script><div id="he-plugin-simple"></div><script type="text/javascript" src="/src/js/tianqijs.js"></script><script src="/src/js/he-simple-common.js?v=2.0"></script><script charset="utf-8" type="text/javascript" src="/src/js/crash_cheat.js"></script><div class="aplayer no-destroy" data-id="1503100241" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="false" muted></div><script src="https://blogApi.chrelyonly.cn/live2d/autoload.js"></script><script charset="utf-8" type="text/javascript" src="/src/js/getuserip.js"></script><script charset="utf-8" type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script><script charset="utf-8" type="text/javascript" src="/src/js/getvalinelist.js"></script><script src="/src/js/snowy.js"></script><style type="text/css">.snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}</style><div class="snow-container"></div><script src="/src/js/myjs.js"></script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9c4d728b.js","daovoice")
+</script><script>var isChatBtn = false
+daovoice('init', {
+  app_id: '9c4d728b',},{
+  launcher: { 
+     disableLauncherIcon: isChatBtn // 悬浮 ICON 是否显示
+  },
+});
+daovoice('update');
+
+if (isChatBtn) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      daovoice('show')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: true // 悬浮 ICON 是否显示
+        },
+      });
+    }
+    function chatBtnShow () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: false // 悬浮 ICON 是否显示
+        },
+      });
+    }
+  }
+}</script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '500ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '500ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
