@@ -20,6 +20,10 @@
   background-image: none;
   background-color: transparent;
 }
+/* 影藏玻璃块 */
+#page-header:not(.not-top-img):before {
+  background-color : rgba(0,0,0,0) !important
+}
 /* 隐藏底部图片 */
 #footer{
   background-image: none;
